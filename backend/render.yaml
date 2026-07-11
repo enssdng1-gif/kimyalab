@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: kimyalab-backend
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATA_DIR
+        value: /data/kullanicilar
+    disk:
+      name: kimyalab-data
+      mountPath: /data
+      sizeGB: 1
